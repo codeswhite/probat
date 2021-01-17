@@ -1,6 +1,10 @@
 ## ProBat
 **Battery life saver and reminder**
 
+![Usage Screencap](https://i.imgur.com/Phy7vGM.gif)
+
+*Paraphernalia: [Terminator](https://github.com/gnome-terminator/terminator), [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) with [bullet-train theme](https://github.com/caiogondim/bullet-train.zsh), [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) and [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)*
+
 ## Getting Started:
 Current requirements are:
  - python-termcolor: colorizing the shell on unix
