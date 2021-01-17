@@ -1,13 +1,12 @@
 from subprocess import call
-from termcolor import colored
 from time import time
 from os import remove
+from pathlib import PosixPath
 
-from interutils.interactive import pr
+from termcolor import colored
 
 # TODO args (quiet and verbose and more)
 
-from pathlib import PosixPath
 
 SYS_POWER_BASE_PATH = PosixPath('/sys/class/power_supply')
 
@@ -73,9 +72,10 @@ def main() -> int:
     status = (
         colored("Discharging", "red"),
         colored("Charging", "green"))[adp_online]
-    pr(f'{bat_id}: {status} - {lvl}% (Design: {lvl_design}%/{capacity}%)', '*')
+    print(colored('[*]', 'cyan'),
+          f'{bat_id}: {status} - {lvl}% (Design: {lvl_design}%/{capacity}%)')
     if notice:
-        pr(notice, '!')
+        print(colored('[Notice]', 'yellow'), notice)
         call(['notify-send', '--urgency=critical',
               '--icon=battery-charged', notice])
 
