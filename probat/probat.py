@@ -78,7 +78,3 @@ def main() -> int:
         print(colored('[Notice]', 'yellow'), notice)
         call(['notify-send', '--urgency=critical',
               '--icon=battery-charged', notice])
-
-
-if __name__ == "__main__":
-    exit(main())
