@@ -18,7 +18,7 @@ config = {  # Li-poli
 }
 
 
-def _read_int(path: PosixPath):
+def _read_int(path: PosixPath) -> int:
     return int(path.read_text().strip())
 
 
