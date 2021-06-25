@@ -25,7 +25,8 @@ def _read_int(path: PosixPath) -> int:
 
 
 def main() -> int:
-    config = DictConfig('~/.config/probat.conf', config_defaults)
+    config = DictConfig(
+        PosixPath.home().joinpath('.config', 'probat.conf'), config_defaults)
 
     # Check env
     # TODO Get list of all batteries?
