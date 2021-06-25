@@ -3,6 +3,8 @@ from time import time
 from os import remove
 from pathlib import PosixPath
 
+from .dict_conf import DictConfig
+
 from termcolor import colored
 
 # TODO args (quiet and verbose and more)
@@ -10,8 +12,8 @@ from termcolor import colored
 
 SYS_POWER_BASE_PATH = PosixPath('/sys/class/power_supply')
 
-config = {  # Li-poli
-    'full_lvl': 98,
+config_defaults = {  # Li-poli
+    'full_lvl': 96,
     'full_pad_time': 600,  # In seconds
     'almost_charge_lvl': 20,
     'please_charge_lvl': 15,
@@ -23,6 +25,8 @@ def _read_int(path: PosixPath) -> int:
 
 
 def main() -> int:
+    config = DictConfig('~/.config/probat.conf', config_defaults)
+
     # Check env
     # TODO Get list of all batteries?
     # bat_ids = []

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="probat",
-    version="1.0.2",
+    version="1.1.0",
     description="Battery life saver and reminder",
     url="https://github.com/codeswhite/probat",
     classifiers=[
