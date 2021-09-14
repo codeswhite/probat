@@ -53,11 +53,12 @@ def main() -> int:
     capacity = round(full / full_design * 100, 1)
 
     # process status and notice
-    probat_ts = PosixPath.home().joinpath('.config', 'probat.ts')
+    probat_ts = PosixPath('/tmp/probat.ts')
     notice = None
     if adp_online:
         if lvl >= config['full_lvl']:
             if not probat_ts.exists():
+                notice = 'Fully charged now!'
                 probat_ts.write_text(str(time()))
             else:
                 time_delta = (time() - float(probat_ts.read_text().strip()))
